@@ -1,0 +1,52 @@
+
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/">Sanal Günlük</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">Hakkımızda</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/days">Kimler Ne Zaman Yazdı </a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav ms-auto">
+
+    {% if session["logged_in"] %}
+        <li class="nav-item active">
+          <a class="nav-link" href="/logout">Çıkış Yap</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/dashboard">Kontrol Paneli</a>
+        </li>        
+    {% else %}
+            <li class="nav-item active">
+          <a class="nav-link" href="/login">Giriş Yap</a>
+        </li>
+
+
+
+        <li class="nav-item active">
+          <a class="nav-link" href="/register">Kayıt Ol</a>
+        </li>  
+    {% endif %}
+
+ 
+
+      
+
+
+
+  
+      </ul>
+  </div>
+
+</nav>
+<br>

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+<br>
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+
+<form method="POST">
+  <dl>
+    {{ render_field(form.title,class="form-control") }}
+    {{ render_field(form.content,class="form-control") }}
+
+  </dl>
+<button type="sumbit" id="dugme" class="btn btn-outline-dark">Yayınla</button></form>
+<br><br><br><br><br><br><br><br>  
+{% endblock body %}

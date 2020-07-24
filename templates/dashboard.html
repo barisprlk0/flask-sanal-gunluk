@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block body %}
+<h3>Kontrol Paneli</h3>
+<small> Hoşgeldiniz, {{session["username"]}} </small>
+<hr>
+
+<a href="/adday" class="btn btn-danger">Ekle</a>
+
+<br><br>
+{% if days %}
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Başlık</th>
+      <th scope="col">Yazar</th>
+      <th scope="col">Tarih</th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for day in days %}
+  <tr>
+  <th scope="row">{{day.id}} </th>
+  <td> <a id="link" href="/days/{{day.id}}"> {{day.title}}  </a> </td>
+  <td>{{day.author}}  </td>
+  <td> {{day.created_date}} </td>
+  <td> <a href="/update" class="btn btn-danger">Güncelle</a></td>
+  <td> <a href="/delete/{{day.id}}" class="btn btn-danger"> Sil     </a> </td>
+    
+
+  
+  </tr>
+  {% endfor %}   
+
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-danger">Size Ait Kaydedilen Gün Yok </div>
+
+{% endif %}
+{% endblock body %}

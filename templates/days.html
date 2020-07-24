@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+<h3> Bugün Kimler Yazdı </h3>
+<br><br>
+
+{% if days %}
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Başlık</th>
+      <th scope="col">Yazar</th>
+      <th scope="col">Tarih</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+  {% for day in days %}
+  <tr>
+  <th scope="row">{{day.id}} </th>
+  <td> {{day.title}} </td>
+  <td>{{day.author}}  </td>
+  <td> {{day.created_date}} </td>
+
+  
+  </tr>
+  {% endfor %}   
+
+  </tbody>
+</table>
+
+
+
+{% else %}
+<div class="alert alert-danger">Kaydedilen Gün Yok </div>
+{% endif %}
+
+
+{% endblock body %}

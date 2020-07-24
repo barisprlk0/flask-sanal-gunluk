@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if day %}
+<div class="jumbotron text-center">
+<h4> {{day.title}} </h4>
+<br>
+Yazar: {{day.author}} 
+<br>
+Tarih: {{day.created_date}}<hr>
+
+{{day.content | safe}} 
+</div>
+{% else %}
+<div class="alert alert-danger"> Böyle Bir Makale Bulunmuyor </div>
+<style> 
+
+
+</style>
+{% endif %}
+{% endblock body %}
